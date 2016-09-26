@@ -64,6 +64,7 @@ public class SeguridadSocial {
         return null;
     }
 
+    //OBTENER PERSONA POR NUMERO SEGURIDAD SOCIAL
     public Persona obtenerPersonaPorNumSS(String numSS) {
 
         for (Persona personaActual : personasList) {
@@ -76,7 +77,7 @@ public class SeguridadSocial {
         return null;
     }
 
-
+    //OBTENER PERSONA POR RANGO SALARIAL
         public List<Persona> obtenerPersonasRangoSalarial ( double min, double max){
             List<Persona> aux = new ArrayList<>();
 
@@ -90,6 +91,7 @@ public class SeguridadSocial {
             return aux;
         }
 
+    //OBTENER PERSONA MAYORES QUE
         public List<Persona> obtenerPersonasMayoresQue ( int edad){
 
             List<Persona> aux = new ArrayList<>();
@@ -105,6 +107,7 @@ public class SeguridadSocial {
 
         }
 
+    //OBTENER TODAS
         public List<Persona> obtenerTodas () {
 
             List<Persona> aux = new ArrayList<>();

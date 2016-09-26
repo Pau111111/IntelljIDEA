@@ -13,6 +13,13 @@ public class SeguridadSocialHashMap {
         }
     }
 
+    public void bajaPersona(Persona persona) {
+        if (!personaMapDni.containsKey(persona.getDni())) {
+            //vincula la clave dni con la persona
+            personaMapDni.remove(persona.getDni(), persona);
+        }
+    }
+
     public Persona obtenerPersonaPorDNI(String dni) {
         //personaMapDni.key();
         //personaMapDni.values();
@@ -20,4 +27,10 @@ public class SeguridadSocialHashMap {
         return personaMapDni.get(dni);
     }
 
+    public Persona obtenerPersonaPorNumSS(String numSS) {
+        //personaMapDni.key();
+        //personaMapDni.values();
+        //personaMapDni.remove();
+        return personaMapSs.get(numSS);
+    }
 }
