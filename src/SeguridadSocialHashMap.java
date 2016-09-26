@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SeguridadSocialHashMap {
@@ -32,5 +34,39 @@ public class SeguridadSocialHashMap {
         //personaMapDni.values();
         //personaMapDni.remove();
         return personaMapSs.get(numSS);
+    }
+
+    public List<Persona> obtenerPersonasRangoSalarial (double min, double max){
+        List<Persona> aux = new ArrayList<>();
+
+        for (Persona persona : personaMapDni.values()) {
+            if (persona.getSalario() >= min && persona.getSalario() <= max) {
+                aux.add(persona);
+            }
+        }
+        return aux;
+    }
+
+    public List<Persona> obtenerPersonasMayoresQue ( int edad){
+
+        List<Persona> aux = new ArrayList<>();
+
+        for (Persona persona : personaMapDni.values()) {
+            if (persona.getEdad() > edad) {
+                //al hacer return ya sale del "for";
+                aux.add(persona);
+            }
+        }
+        return aux;
+    }
+
+    public List<Persona> obtenerTodas () {
+
+        List<Persona> aux = new ArrayList<>();
+
+        for (Persona persona : personaMapDni.values()) {
+            aux.add(persona);
+        }
+        return aux;
     }
 }
