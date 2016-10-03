@@ -3,9 +3,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SeguridadSocialHashMap {
-    private Map<String, Persona> personaMapDni = new HashMap<>();
-    private Map<String, Persona> personaMapSs = new HashMap<>();
+public class SeguridadSocialTreeMap {
+    private Map<String, Persona> personaMapDni = new TreeMap<>();
+    private Map<String, Persona> personaMapSs = new TreeMap<>();
 
     public void altaPersona(Persona persona) {
         if (!personaMapDni.containsKey(persona.getDni()) && !personaMapSs.containsKey(persona.getNumSS())) {
@@ -18,8 +18,6 @@ public class SeguridadSocialHashMap {
     public void bajaPersona(Persona persona) {
         if (!personaMapDni.containsKey(persona.getDni())) {
             //vincula la clave dni con la persona
-            Persona persona = personaMapDni.get(dni);
-            personaMapSs.remove(persona.getNumSS());
             personaMapDni.remove(persona.getDni(), persona);
         }
     }
