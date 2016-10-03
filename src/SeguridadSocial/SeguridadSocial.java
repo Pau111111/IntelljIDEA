@@ -14,7 +14,7 @@ public class SeguridadSocial {
     }
 
 // Debes comprobar que no se introduzcan dos personas con el mismo DNI/Número Seguridad Social
-
+//Esto es la leche
 
     //ALTA PERSONA
     public void altaPersona(Persona persona) {
