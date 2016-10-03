@@ -1,4 +1,4 @@
-import java.util.List;
+package SeguridadSocial;
 
 public class Persona {
     private String dni;
@@ -67,7 +67,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
+        return "SeguridadSocial.Persona{" +
                 "dni='" + dni + '\'' +
                 ", numSS='" + numSS + '\'' +
                 ", nombre='" + nombre + '\'' +

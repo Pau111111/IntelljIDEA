@@ -1,3 +1,5 @@
+package SeguridadSocial;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,7 +124,7 @@ public class SeguridadSocial {
 
         public String toString () {
 
-            return "SeguridadSocial{" +
+            return "SeguridadSocial.SeguridadSocial{" +
 
                     "personasList=" + personasList +
 

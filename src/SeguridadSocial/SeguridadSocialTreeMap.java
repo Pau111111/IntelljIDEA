@@ -1,11 +1,10 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+package SeguridadSocial;
 
-public class SeguridadSocialHashMap {
-    private Map<String, Persona> personaMapDni = new HashMap<>();
-    private Map<String, Persona> personaMapSs = new HashMap<>();
+import java.util.*;
+
+public class SeguridadSocialTreeMap {
+    private Map<String, Persona> personaMapDni = new TreeMap<>();
+    private Map<String, Persona> personaMapSs = new TreeMap<>();
 
     public void altaPersona(Persona persona) {
         if (!personaMapDni.containsKey(persona.getDni()) && !personaMapSs.containsKey(persona.getNumSS())) {
@@ -15,12 +14,10 @@ public class SeguridadSocialHashMap {
         }
     }
 
-    public void bajaPersona(String dni) {
-        if (!personaMapDni.containsKey(dni)) {
+    public void bajaPersona(Persona persona) {
+        if (!personaMapDni.containsKey(persona.getDni())) {
             //vincula la clave dni con la persona
-            Persona persona = personaMapDni.get(dni);
-            personaMapSs.remove(dni);
-            personaMapDni.remove(persona.getNumSS());
+            personaMapDni.remove(persona.getDni(), persona);
         }
     }
 
