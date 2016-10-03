@@ -54,7 +54,33 @@ public class Coche {
                 ", precio=" + precio +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Coche coche = (Coche) o;
+
+        if (Double.compare(coche.precio, precio) != 0) return false;
+        if (matricula != null ? !matricula.equals(coche.matricula) : coche.matricula != null) return false;
+        if (marca != null ? !marca.equals(coche.marca) : coche.marca != null) return false;
+        return modelo != null ? modelo.equals(coche.modelo) : coche.modelo == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = matricula != null ? matricula.hashCode() : 0;
+        result = 31 * result + (marca != null ? marca.hashCode() : 0);
+        result = 31 * result + (modelo != null ? modelo.hashCode() : 0);
+        temp = Double.doubleToLongBits(precio);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }
 
 
-//esto es uyna prueba
+//esto es una prueba

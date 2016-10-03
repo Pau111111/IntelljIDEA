@@ -7,6 +7,7 @@ public class RegistroVehiculos {
     private Set<Coche> coches = new HashSet<>();
 
     public void registrarVehiculo(Coche coche) {
+        coches.add(coche);
     }
 
     // Optional<Coche> es una nueva funcionalidad de Java 8 para evitar trabajar con null
