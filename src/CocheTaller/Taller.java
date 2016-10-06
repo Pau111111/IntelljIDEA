@@ -9,9 +9,16 @@ public class Taller {
     private Map<Persona, Coche> reparaciones =
             new TreeMap<>(Comparator.comparing(Persona::getNumSS));
 
-    public Coche registrarReparacion(Persona persona, Coche coche){
-        return null;
+    public Coche registrarReparacion(Persona persona, Coche coche)
+
+    {
+        if(!reparaciones.containsKey(persona.getDni()) && (!reparaciones.containsKey(coche.getMatricula()))) {
+
+            reparaciones.put(persona, coche);
     }
+    return null;
+    }
+
 
     public Coche obtenerCoche(Persona persona){
         return null;
@@ -21,3 +28,6 @@ public class Taller {
         return null;
     }
 }
+
+
+//Hashmap funciona més ràpid, el treemap ordena y el HashSet no permet repetir

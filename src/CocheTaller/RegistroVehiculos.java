@@ -60,11 +60,15 @@ public class RegistroVehiculos {
     }
 
     public List<Coche> obtenerTodos() {
+        /*
         List<Coche> aux = new ArrayList<>();
 
         for (Coche cocheActual : coches) {
             aux.add(cocheActual);
         }
+        return aux;
+        */
+        List<Coche> aux = new ArrayList<>(coches);
         return aux;
     }
 }
