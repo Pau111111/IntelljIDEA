@@ -6,28 +6,40 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class Taller {
+    //en el treemap el primer valor es la KEY i el segon es el value
+                //-key   -value
     private Map<Persona, Coche> reparaciones =
-            new TreeMap<>(Comparator.comparing(Persona::getNumSS));
+            new TreeMap<>(Comparator.comparing(Persona::getNumSS)); //aixo es java 1.8
 
-    public Coche registrarReparacion(Persona persona, Coche coche)
+    public void registrarReparacion(Persona persona, Coche coche){
 
-    {
-        if(!reparaciones.containsKey(persona.getDni()) && (!reparaciones.containsKey(coche.getMatricula()))) {
 
-            reparaciones.put(persona, coche);
-    }
-    return null;
+            reparaciones.putIfAbsent(persona, coche);
+
     }
 
 
     public Coche obtenerCoche(Persona persona){
-        return null;
+//al fer .get returna el value de la key
+          return reparaciones.get(persona);
+
     }
 
     public Set<Persona> obtenerClientes(){
-        return null;
+
+       return reparaciones.keySet();
     }
 }
+
+// aixo fa el mateix que "new TreeMap<>(Comparator.comparing(Persona::getNumSS));" pero amb java 1.7
+//class PersonComparatorBySS implements Comparator<Persona>
+//{
+//    @Override
+//    public int compare(Persona persona, Persona anotherPerson)
+//    {
+//        return persona.getNumSS().compareTo(anotherPerson.getNumSS());
+//    }
+//}
 
 
 //Hashmap funciona més ràpid, el treemap ordena y el HashSet no permet repetir
